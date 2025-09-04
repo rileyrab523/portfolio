@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const sections = document.querySelectorAll('section');
     const navLinks = document.querySelectorAll('.navbar a');
 
-    // Función para actualizar el enlace activo en la barra de navegación
+    // Function to update the active link in the navigation bar
     const updateActiveLink = () => {
         let current = '';
         sections.forEach(section => {
@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     };
 
-// Función throttle para limitar la cantidad de ejecuciones
+// Throttle function to limit the number of executions
 function throttle(func, limit) {
     let inThrottle;
     return function() {
@@ -45,9 +45,10 @@ window.addEventListener('wheel', throttle((e) => {
     }
 
     setTimeout(updateActiveLink, 500);
-}, 100), { passive: false }); // Throttle cada 100ms
+}, 100), { passive: false }); // Throttle every 100ms
 
-    // Actualizar el enlace activo también en scroll normal
+
+    // Update the active link also in normal scroll
     window.addEventListener('scroll', updateActiveLink);
 
     const hamburger = document.querySelector('.hamburger');
@@ -57,18 +58,18 @@ window.addEventListener('wheel', throttle((e) => {
         navUL.classList.toggle('open');
     });
 
-    // Escuchar clics en todo el documento
+    // Hear clicks throughout the document
     document.addEventListener('click', function(event) {
-        // Si el clic NO es en el hamburger y no es dentro del navbar ul
+        // If the click is NOT on the hamburger and is not within the navbar ul
         if (!hamburger.contains(event.target) && !navUL.contains(event.target)) {
-            navUL.classList.remove('open');  // Cierra el menú
+            navUL.classList.remove('open');  // Close the menu
         }
     });
 
     function initSwiper() {
         new Swiper('.mySwiper', {
-            slidesPerView: 1, // Para móviles, muestra una tarjeta a la vez
-            spaceBetween: 10, // Espacio entre slides para móviles
+            slidesPerView: 1, // For mobile, display one card at a time
+            spaceBetween: 10, // Space between slides for mobile devices
             pagination: {
                 el: '.swiper-pagination',
                 clickable: true,
@@ -79,13 +80,13 @@ window.addEventListener('wheel', throttle((e) => {
             },
             breakpoints: {
                 768: {
-                    slidesPerView: 3, // Para pantallas más grandes, muestra 3 tarjetas
-                    spaceBetween: 30, // Espacio entre slides para pantallas más grandes
+                    slidesPerView: 3, // For larger screens, display 3 cards
+                    spaceBetween: 30, // Space between slides for larger screens
                 }
             },
         });
     }
 
-    initSwiper(); // Inicia Swiper al cargar
-    window.addEventListener('resize', initSwiper); // Re-inicializar Swiper en cambio de tamaño
+    initSwiper(); // Start Swiper on load
+    window.addEventListener('resize', initSwiper); // Re-initialize Swiper on resize
 });

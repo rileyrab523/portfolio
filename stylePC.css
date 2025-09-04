@@ -10,8 +10,8 @@ html, body {
 }
 body {
   min-height: 100vh;
-  color: #000080;
-  background: #c0ebe4;
+  color: #333333;
+  background: #FFFFFF;
   display: flex;
   flex-direction: column;
   overflow-x: hidden;
@@ -20,24 +20,24 @@ body {
 /* Navbar */
 .navbar {
   width: 100%;
-  padding: 50px 0;
-  background: #000080;
+  padding: 10px 0;
+  background: #333333;
   position: fixed;
   top: 0; left: 0; z-index: 1000;
 }
 .navbar ul {
   list-style: none;
   text-align: center;
-  padding: 20px 0;
+  padding: 10px 0;
 }
 .navbar li {
   display: inline;
-  margin-right: 40px;
+  margin-right: 20px;
 }
 .navbar a {
   color: #fff;
   text-decoration: none;
-  font-size: 32px;
+  font-size: 16px;
   transition: color 0.2s;
 }
 .navbar a.active, .navbar a:hover { color: #FFC107; }
@@ -157,7 +157,7 @@ section {
 
 /* Contact */
 .contact-info {
-  background: #000080;
+  background: #333333;
   color: #fff;
 }
 .contact-info a {
